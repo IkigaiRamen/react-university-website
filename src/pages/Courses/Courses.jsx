@@ -1,74 +1,48 @@
 import React from 'react';
 import './Courses.css';
 import { Card } from 'react-bootstrap';
-import ArtCourseImg from '../../utils/images/art-course.jpg';
-import BusinessCourseImg from '../../utils/images/business-course.jpg';
-import ComputerScienceCourseImg from '../../utils/images/computer-science-course.jpg';
-import EducationCourseImg from '../../utils/images/education-course.jpg';
-import HealthcareCourseImg from '../../utils/images/healthcare-course.jpg';
-import LawCourseImg from '../../utils/images/law-course.jpg';
-import MusicCourseImg from '../../utils/images/music-course.jpg';
-import SportCourseImg from '../../utils/images/sport-course.jpg';
+import MigCourseImg from '../../utils/images/Mig.webp';
+import TigCourseImg from '../../utils/images/Tig.webp';
+import ArcCourseImg from '../../utils/images/Arc.jpg';
+import SemiAutoCourseImg from '../../utils/images/Semi.jpg';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 
 const courses = [
     {
         id: 1,
-        img: [ArtCourseImg],
-        title: 'Arts',
-        description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+        img: [MigCourseImg],
+        title: 'Soudure MIG',
+        description: 'Apprenez la technique MIG avec des exercices pratiques et théoriques pour devenir opérationnel sur chantier ou en atelier.'
     },
     {
         id: 2,
-        img: [BusinessCourseImg],
-        title: 'Business',
-        description: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'
+        img: [TigCourseImg],
+        title: 'Soudure TIG',
+        description: 'Formation complète en soudure TIG pour réaliser des assemblages précis sur différents matériaux.'
     },
     {
         id: 3,
-        img: [ComputerScienceCourseImg],
-        title: 'Computer Science',
-        description: ' It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software.'
+        img: [ArcCourseImg],
+        title: 'Soudure à l’arc',
+        description: 'Maîtrisez la soudure à l’arc avec nos instructeurs expérimentés pour applications industrielles et construction.'
     },
     {
         id: 4,
-        img: [EducationCourseImg],
-        title: 'Education',
-        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-    },
-    {
-        id: 5,
-        img: [HealthcareCourseImg],
-        title: 'Healthcare',
-        description: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.'
-    },
-    {
-        id: 6,
-        img: [LawCourseImg],
-        title: 'Law',
-        description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy.'
-    },
-    {
-        id: 7,
-        img: [MusicCourseImg],
-        title: 'Music',
-        description: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).'
-    },
-    {
-        id: 8,
-        img: [SportCourseImg],
-        title: 'Sports',
-        description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.'
-    },
+        img: [SemiAutoCourseImg],
+        title: 'Soudure semi-automatique',
+        description: 'Technique semi-automatique pour les professionnels et étudiants souhaitant améliorer leur productivité et précision.'
+    }
 ];
 
 function Courses() {
   return (
     <div className='courses-page'>
-        <header className='height-75'>
+        <header className='height-75 bg-dark text-light'>
             <div className='container h-100 d-flex flex-column align-items-center justify-content-center text-light'>
-                <h1 className='text-center fw-semibold'>Our Courses</h1>
-                <p className='text-center w-75 mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!</p>
+                <h1 className='text-center fw-semibold'>Nos Formations</h1>
+                <p className='text-center w-75 mb-5'>
+                    Découvrez nos formations spécialisées en soudure 3G, 6G, ARC, TIG et semi-automatique. Apprentissage pratique et théorique pour tous niveaux.
+                </p>
             </div>
         </header>
 
@@ -79,9 +53,9 @@ function Courses() {
                         <Card className='text-white shadow scale-hover-effect'>
                             <Card.Img src={course.img} className='img-fluid' width='500' height='400' />
                             <Card.ImgOverlay className='d-flex flex-column align-items-center justify-content-center p-md-5'>
-                                <Card.Title className='text-center fs-1 text-danger'>{course.title}</Card.Title>
+                                <Card.Title className='text-center fs-1 text-warning'>{course.title}</Card.Title>
                                 <Card.Text className='text-center'>{course.description}</Card.Text>
-                                <button type='button' className='btn btn-outline-light text-capitalize fw-semibold'>View course</button>
+                                <button type='button' className='btn btn-outline-light text-capitalize fw-semibold'>Voir la formation</button>
                             </Card.ImgOverlay>
                         </Card>
                     </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faHardHat } from '@fortawesome/free-solid-svg-icons';
 import { faSquareFacebook, faSquareInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -20,34 +20,35 @@ function App() {
     let todayYear = todayDate.getFullYear();
     setNewDate([todayYear])
   }, []);
- 
+
   return (
     <div>
+      {/* Navbar */}
       <Navbar expand="lg" className='position-absolute w-100'>
         <Container>
           <Navbar.Brand>
             <Link to="/" className='navbar-brand d-flex align-items-center' style={{color: "#dc3545"}}>
-              <FontAwesomeIcon icon={faGraduationCap} size='xl' />
+              <FontAwesomeIcon icon={faHardHat} size='xl' />
               <span className='mx-2 text-light lh-1 fw-semibold'>
-                University of
-                <br></br>
-                Arts & Tech
+                WELDERCOM
+                <br/>
+                Centre de soudure
               </span>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto justify-content-end w-100'>
-              <Link to='/' className='nav-link text-uppercase'>Home</Link>
-              <Link to='/courses' className='nav-link text-uppercase'>Our courses</Link>
-              <Link to='/about' className='nav-link text-uppercase'>About us</Link>
-              <Link to='/blog' className='nav-link text-uppercase'>Blog</Link>
-              <Link to='/contact' className='nav-link text-uppercase'>Get in touch</Link>
+              <Link to='/' className='nav-link text-uppercase'>Accueil</Link>
+              <Link to='/courses' className='nav-link text-uppercase'>Formations</Link>
+              <Link to='/about' className='nav-link text-uppercase'>À propos</Link>
+              <Link to='/contact' className='nav-link text-uppercase'>Contact</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
+      {/* Routes */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
@@ -56,6 +57,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
       </Routes>
 
+      {/* Footer */}
       <footer>
         <div className='container my-5'>
           <div className='row d-flex justify-content-between align-items-center'>
@@ -63,46 +65,20 @@ function App() {
               <div className='d-row d-md-flex justify-content-between align-items-center'>
                 <div className='col-md-6 col-lg-5'>
                   <ul className='footer-navigation list-unstyled mb-0'>
-                    <Link to="/" className='text-decoration-none text-danger'>
-                      <li className='fw-semibold'>Home</li>
-                    </Link>
-                    <Link to="/courses" className='text-decoration-none text-danger'>
-                      <li className='fw-semibold'>Our courses</li>
-                    </Link>
-                    <Link to="/about" className='text-decoration-none text-danger'>
-                      <li className='fw-semibold'>About us</li>
-                    </Link>
-                    <Link to="/blog" className='text-decoration-none text-danger'>
-                      <li className='fw-semibold'>Blog</li>
-                    </Link>
-                    <Link to="/contact" className='text-decoration-none text-danger'>
-                      <li className='fw-semibold'>Get in touch</li>
-                    </Link>
+                    <Link to="/" className='text-decoration-none text-danger'><li className='fw-semibold'>Accueil</li></Link>
+                    <Link to="/courses" className='text-decoration-none text-danger'><li className='fw-semibold'>Formations</li></Link>
+                    <Link to="/about" className='text-decoration-none text-danger'><li className='fw-semibold'>À propos</li></Link>
+                    <Link to="/blog" className='text-decoration-none text-danger'><li className='fw-semibold'>Blog</li></Link>
+                    <Link to="/contact" className='text-decoration-none text-danger'><li className='fw-semibold'>Contact</li></Link>
                   </ul>
                 </div>
 
                 <div className='col-sm-6 col-lg-7 my-4 my-md-0'>
                   <ul className='footer-social-icons list-unstyled d-flex justify-content-sm-between'>
-                    <Link to="/contact">
-                      <li>
-                        <FontAwesomeIcon icon={faSquareFacebook} />
-                      </li>
-                    </Link>
-                    <Link to="/contact">
-                      <li className='mx-3 mx-sm-0'>
-                        <FontAwesomeIcon icon={faSquareInstagram} />
-                      </li>
-                    </Link>
-                    <Link to="/contact">
-                      <li className='me-3 me-sm-0'>
-                        <FontAwesomeIcon icon={faTiktok} />
-                      </li>
-                    </Link>
-                    <Link to="/contact">
-                      <li>
-                        <FontAwesomeIcon icon={faYoutube} />
-                      </li>
-                    </Link>
+                    <Link to="/contact"><li><FontAwesomeIcon icon={faSquareFacebook} /></li></Link>
+                    <Link to="/contact"><li className='mx-3 mx-sm-0'><FontAwesomeIcon icon={faSquareInstagram} /></li></Link>
+                    <Link to="/contact"><li className='me-3 me-sm-0'><FontAwesomeIcon icon={faTiktok} /></li></Link>
+                    <Link to="/contact"><li><FontAwesomeIcon icon={faYoutube} /></li></Link>
                   </ul>
                 </div>
               </div>
@@ -110,22 +86,18 @@ function App() {
 
             <div className='col-md-4'>
               <ul className='list-unstyled mb-0'>
-                <li>
-                  <p>Main Address: 47 High Street, London, UK</p>
-                </li>
-                <li>
-                  <p>Phone Number: <a href="tel:0900800700" className='text-dark'>0900800700</a></p>
-                </li>
-                <li>
-                  <p>Email: <a href="mailto:london@university.com" className='text-dark'>london@university.com</a></p>
-                </li>
+                <li><p>Adresse : 14 Rue de Pologne, Bab Saadoun, Tunis</p></li>
+                <li><p>Téléphone : <a href="tel:+21636147547" className='text-dark'>+216 36 147 547</a></p></li>
+                <li><p>Mobile : <a href="tel:+21658108576" className='text-dark'>+216 58 108 576</a></p></li>
+                <li><p>Email : <a href="mailto:contact@weldercom.net" className='text-dark'>contact@weldercom.net</a></p></li>
+                <li><p>Web : <a href="http://www.weldercom.net" className='text-dark' target="_blank" rel="noopener noreferrer">www.weldercom.net</a></p></li>
               </ul>
             </div>
           </div>
         </div>
         <div className='bg-body-tertiary'>
           <div className='container'>
-            <p className='p-3 m-0 text-center'>&copy; {newDate} University of Arts & Tech / made by <Link to='https://www.ionutcora.com/' style={{textDecoration: 'none', color: '#000000'}} target="_blank">Ionut Cora</Link></p>
+            <p className='p-3 m-0 text-center'>&copy; {newDate} WELDERCOM / Réalisé par <Link to='https://www.ionutcora.com/' style={{textDecoration: 'none', color: '#000'}} target="_blank">Ionut Cora</Link></p>
           </div>
         </div>
       </footer>

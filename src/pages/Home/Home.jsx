@@ -2,9 +2,11 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
-import StartCoursesImg from '../../utils/images/start-courses-img.jpg';
+import StartCoursesImg from '../../utils/images/start-courses-img.jpg'; // replace with a welding image later
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 import { Card } from 'react-bootstrap';
+
+// Replace these 3 images with welding-related ones
 import Blog1Img from '../../utils/images/blog1-img.jpg';
 import Blog2Img from '../../utils/images/blog2-img.jpg';
 import Blog3Img from '../../utils/images/blog3-img.jpg';
@@ -13,69 +15,94 @@ const blogs = [
     {
         id: 1,
         img: [Blog1Img],
-        title: 'Blog 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        title: 'Pourquoi choisir la soudure 3G/6G ?',
+        description: 'Découvrez pourquoi la soudure 3G/6G est l’une des compétences les plus demandées au Canada et en Europe. Salaire élevé, forte demande, et possibilités de recrutement.'
     },
     {
         id: 2,
         img: [Blog2Img],
-        title: 'Blog 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        title: 'Comment se préparer à une session de soudure 6G',
+        description: 'La soudure 6G demande précision, technique et entraînement. Voici les conseils de nos formateurs pour réussir votre certification avec succès.'
     },
     {
         id: 3,
         img: [Blog3Img],
-        title: 'Blog 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        title: 'Les opportunités de travail pour les soudeurs en 2025',
+        description: 'Le secteur du soudage est en pleine expansion, notamment au Canada. Découvrez les opportunités de recrutement accessibles après votre formation chez WELDERCOM.'
     }
 ];
 
 function Home() {
   return (
     <div className='home-page'>
+        {/* HERO SECTION */}
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
-                <h1 className='text-center fw-semibold'>University of <br /> Arts & Technology</h1>
-                <p className='text-center'>Apply with our University of Arts & Technology for courses in Computer Science, Art, Business Administration & Business Management, Education, Healthcare, Law, Music or Sport!</p>
+                <h1 className='text-center fw-semibold'>
+                    Centre de Formation Professionnelle<br /> 
+                    en Soudure 3G & 6G
+                </h1>
+                <p className='text-center'>
+                    WELDERCOM est un centre agréé par l’État spécialisé en soudure 
+                    ARC, MIG-MAG, TIG et Pipe Line 6G. Formation pratique, stages, 
+                    et préparation pour travailler au Canada.
+                </p>
+
                 <div className='d-flex flex-column flex-sm-row align-items-center mt-md-3'>
                     <Link to="/courses">
-                        <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Our Courses</button>
+                        <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>
+                            Nos Formations
+                        </button>
                     </Link>
                     <Link to="/contact">
-                        <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Contact Us</button>
+                        <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>
+                            Contactez-nous
+                        </button>
                     </Link>
                 </div>
             </div>
         </header>
 
+        {/* WHY CHOOSE US SECTION */}
         <div className="py-5">
             <ChooseSection />
         </div>
 
+        {/* START COURSES SECTION */}
         <div className='py-5 bg-light'>
             <div className="container">
                 <div className='row d-flex align-items-center justify-content-around'>
                     <div className='col-lg-5'>
-                        <h2 className='text-capitalize'>2025 start courses</h2>
-                        <p>At the University of London, the courses for 2025 start in May for the longer courses, respectively in September for the shorter courses!</p>
+                        <h2 className='text-capitalize'>Prochaine session</h2>
+                        <p>
+                            La prochaine session de formation en soudure débute très bientôt. 
+                            100% pratique, avec encadrement professionnel et préparation aux 
+                            normes canadiennes et européennes.
+                        </p>
                         <Link to="/courses">
-                            <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
+                            <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>
+                                En savoir plus
+                            </button>
                         </Link>
                     </div>
+
                     <div className='col-lg-5 mt-5 mt-lg-0'>
-                        <img src={StartCoursesImg} className='img-fluid' alt="" />
+                        <img src={StartCoursesImg} className='img-fluid' alt="Welding training" />
                     </div>
                 </div>
             </div>
         </div>
 
+        {/* FAQ SECTION */}
         <div className="py-5">
             <FaqAccordion />
         </div>
 
+        {/* BLOG SECTION */}
         <div className='blog-section text-light py-5'>
             <div className='container d-flex flex-column align-items-center'>
-                <h2 className='text-center text-capitalize mb-5'>Latest on the blog</h2>
+                <h2 className='text-center text-capitalize mb-5'>Derniers articles</h2>
+
                 <div className='row g-4'>
                     {blogs.map((blog) => (
                         <div key={blog.id} className='col-md-6 col-lg-4'>
@@ -91,11 +118,15 @@ function Home() {
                         </div>
                     ))}
                 </div>
+
                 <Link to="/blog">
-                    <button type='button' className='btn btn-danger btn-lg mt-5'>Read More Blogs</button>
+                    <button type='button' className='btn btn-danger btn-lg mt-5'>
+                        Voir tous les articles
+                    </button>
                 </Link>
             </div>
         </div>
+
     </div>
   )
 }
